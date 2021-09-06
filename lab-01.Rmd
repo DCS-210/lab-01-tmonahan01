@@ -16,7 +16,10 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+```{r}
+?datasaurus_dozen
+```
+Datasaurus_dozen has 1846 rows and 3 columns. 
 
 ### Exercise 2
 
