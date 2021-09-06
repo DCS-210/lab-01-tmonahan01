@@ -45,7 +45,7 @@ And next calculate the correlation between `x` and `y` in this dataset:
 dino_data %>%
   summarize(r = cor(x, y))
 ```
-
+We find that the correlation between x and y is -.06447185. 
 ### Exercise 3
 
 Add code and narrative as needed.
