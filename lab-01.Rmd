@@ -88,7 +88,7 @@ circle_data %>%
 ```
 We find that the correlation between y and x for the circle data set is -.06834336. When we compare this with the correlation for the dino data we find:
 
-```{r cor-circle}
+```{r cor-circlevsdino}
 circle_r = circle_data %>%
   summarize(r = cor(x, y)) 
 dino_r = dino_data %>%
@@ -98,5 +98,19 @@ dino_r = dino_data %>%
 We find that the r value for our circle data set is 6% greater than that of the dino data set. 
 ### Exercise 5
 
-Add code and narrative as needed.
-To add R chunks either type out the backticks, curly braces, and the letter `r` or use the Insert chunk button above, green C+.
+Plotting all datasets at once!
+
+```{r fig.height=6, fig.width=6}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+Generating the summary coefficients:
+```{r}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
