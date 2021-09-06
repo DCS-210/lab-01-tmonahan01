@@ -68,18 +68,34 @@ We find that the correlation between x and y for the star data set is -.0629611.
 
 ### Exercise 4
 
-Add code and narrative as needed.
+We will now explore the circle data set!
+
 Note that two R chunks are given but they are not labeled.
 Use the convention from above to name them appropriately.
 
 ```{r}
-
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 ```
 
-```{r}
-
+```{r plot-circle}
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
+```{r cor-circle}
+circle_data %>%
+  summarize(r = cor(x, y))
+```
+We find that the correlation between y and x for the circle data set is -.06834336. When we compare this with the correlation for the dino data we find:
 
+```{r cor-circle}
+circle_r = circle_data %>%
+  summarize(r = cor(x, y)) 
+dino_r = dino_data %>%
+  summarize(r = cor(x, y)) 
+(circle_r/dino_r)*100
+```
+We find that the r value for our circle data set is 6% greater than that of the dino data set. 
 ### Exercise 5
 
 Add code and narrative as needed.
