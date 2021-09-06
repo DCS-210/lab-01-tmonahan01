@@ -74,16 +74,33 @@ dino_data %>%
     ##     <dbl>
     ## 1 -0.0645
 
-### Exercise 3
+We find that the correlation between x and y is -.06447185. \#\#\#
+Exercise 3
 
-Add code and narrative as needed. Note that the R chunks are labelled
-with `plot-star` and `cor-star` to provide spaces to place the code for
-plotting and calculating the correlation coefficient. To finish, clean
-up the narrative by removing these instructions.
+``` r
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+```
 
-Blah blah blah…
+``` r
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
 
-I’m some text, you should replace me with more meaningful text…
+![](lab-01_files/figure-gfm/plot-star-1.png)<!-- -->
+
+``` r
+star_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 × 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0630
+
+We find that the correlation between x and y for the star data set is
+-.0629611.
 
 ### Exercise 4
 
