@@ -1,7 +1,7 @@
 Lab 01 - Hello R
 ================
-Insert your name here
-Insert date here
+Thomas Monahan
+9/6/21
 
 ## Load packages and data
 
@@ -14,13 +14,41 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+``` r
+?datasaurus_dozen
+```
+
+Datasaurus\_dozen has 1846 rows and 3 columns.
 
 ### Exercise 2
 
-The answers for this Exercise are given for you below. But you should
-clean up some of the narrative so that it only includes what you want to
-turn in.
+``` r
+datasaurus_dozen %>%
+  count(dataset) %>%
+  print(13)
+```
+
+    ## # A tibble:
+    ## #   13 × 2
+    ##    dataset   
+    ##    <chr>     
+    ##  1 away      
+    ##  2 bullseye  
+    ##  3 circle    
+    ##  4 dino      
+    ##  5 dots      
+    ##  6 h_lines   
+    ##  7 high_lines
+    ##  8 slant_down
+    ##  9 slant_up  
+    ## 10 star      
+    ## 11 v_lines   
+    ## 12 wide_lines
+    ## 13 x_shape   
+    ## # … with 1
+    ## #   more
+    ## #   variable:
+    ## #   n <int>
 
 First let’s plot the data in the dino dataset:
 
@@ -41,7 +69,7 @@ dino_data %>%
   summarize(r = cor(x, y))
 ```
 
-    ## # A tibble: 1 x 1
+    ## # A tibble: 1 × 1
     ##         r
     ##     <dbl>
     ## 1 -0.0645
